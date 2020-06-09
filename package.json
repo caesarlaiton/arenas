@@ -1,0 +1,31 @@
+{
+  "name": "arenas",
+  "version": "1.0.0",
+  "description": "Website about Cuban writer Reinaldo Arenas.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caesarlaiton/arenas.git"
+  },
+  "keywords": [
+    "poet",
+    "cuban",
+    "writer",
+    "author",
+    "reinaldo",
+    "arenas"
+  ],
+  "author": "César Laiton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caesarlaiton/arenas/issues"
+  },
+  "homepage": "https://github.com/caesarlaiton/arenas#readme",
+  "devDependencies": {
+    "postcss-cli": "^7.1.1",
+    "tailwindcss": "^1.4.6"
+  }
+}

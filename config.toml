@@ -1,0 +1,16 @@
+baseURL = ""
+
+languageCode = "en-us"
+
+title = "Arenas"
+
+enableRobotsTXT = true
+
+pluralizelisttitles = false
+
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[params]
+	description = "Website about Cuban writer Reinaldo Arenas"
+	images = [".jpg"]
+	title = "Arenas"

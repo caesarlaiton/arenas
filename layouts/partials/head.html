@@ -1,0 +1,28 @@
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	{{ hugo.Generator }}
+
+	{{ $title := print .Title " | " .Site.Title }}
+	{{ if .IsHome }} {{ $title = .Site.Title }} {{ end }}
+
+	<title>{{ $title }}</title>
+
+  {{ $description := .Site.Params.description }}
+  {{ if .Params.description }} {{ $description = .Params.description }} {{ end }}
+	<meta name="description" content="{{ $description }}">
+
+  {{ $isProd := eq hugo.Environment "production" }}
+
+	{{ $style := resources.Get "css/style.css" | resources.PostCSS }}
+  {{ if $isProd }} {{ $style = $style | minify | fingerprint }} {{ end }}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+	{{ template "_internal/opengraph.html" . }}
+	{{ template "_internal/schema.html" . }}
+	{{ template "_internal/twitter_cards.html" . }}
+	{{ template "_internal/google_analytics.html" . }}
+
+</head>

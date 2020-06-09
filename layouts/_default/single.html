@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+  <article class="mt-16 px-8 max-w-xs">
+
+    <h1 class="mb-8 text-lg font-bold text-purple-800">{{ .Title }}</h1>
+  
+    {{ .Content | replaceRE "<p>" "<p class=\"my-4\">" | safeHTML }}
+
+  </article>
+
+  <a class="my-16 w-24 h-24 rounded-full flex justify-center items-center inline-block mx-auto opacity-50 hover:opacity-100 focus:opacity-100 transition-opacity duration-300 ease-linear" href="{{ .Site.Home.RelPermalink }}#poems" title="Click to go back">
+
+    <div class="w-16 h-16 rounded-full bg-purple-800 flex justify-center items-center inline-block mx-auto">
+
+      <img class="w-8 h-8" src="{{ .Site.Home.RelPermalink }}arrow-left.svg" alt="Left arrow icon.">
+
+    </div>
+
+  </a>
+
+{{ end }}

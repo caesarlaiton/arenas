@@ -3,11 +3,11 @@
 
 	{{ partial "head.html" . }}
 
-	<body class="h-screen bg-purple-100 text-gray-700 flex flex-col items-center">
+	<body class="h-screen bg-purple-100 text-gray-700 flex flex-col items-center md:items-end md:max-w-screen-md md:mx-auto">
 
     {{ partial "aside.html" . }}
 
-		<div class="flex-grow">
+		<div class="flex-grow md:flex-grow-0 md:mr-8">
 
 			{{ block "main" . }}
 
@@ -15,6 +15,7 @@
 
 		</div>
 
+    {{ partial "footer.html" }}
 
     {{ if eq .Kind "home" }}
 

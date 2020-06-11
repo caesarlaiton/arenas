@@ -1,6 +1,9 @@
 module.exports = {
 	purge: {
-    content: ["./layouts/**/*.html"]
+    content: ["./layouts/**/*.html"],
+    options: {
+      whitelist: ["opacity-25"]
+    }
   },
   theme: {
     extend: {

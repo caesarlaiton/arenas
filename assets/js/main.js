@@ -14,11 +14,11 @@ const rightBtnCarousel = document.querySelectorAll("button.carousel")[1],
           "https://www.amazon.com/Color-Summer-Earthly-Delights-Pentagonia/dp/0140157190"
         ],
         imgSrcCarousel = [
-          "/before-night-falls.jpg",
-          "/farewell-to-the-sea.jpg",
-          "/singing-from-the-well.jpg",
-          "/the-assault.jpg",
-          "/the-color-of-summer.jpg"
+          "https://caesarlaiton.github.io/arenas/before-night-falls.jpg",
+          "https://caesarlaiton.github.io/arenas/farewell-to-the-sea.jpg",
+          "https://caesarlaiton.github.io/arenas/singing-from-the-well.jpg",
+          "https://caesarlaiton.github.io/arenas/the-assault.jpg",
+          "https://caesarlaiton.github.io/arenas/the-color-of-summer.jpg"
         ],
         imgAltCarousel = [
           "Cover image of Before Night Falls book.",

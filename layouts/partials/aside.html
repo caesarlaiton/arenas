@@ -2,7 +2,13 @@
 
   <div class="relative">
 
-    <img src="{{ .Site.Home.RelPermalink }}reinaldo-arenas.jpg" alt="Photo of Cuban writer Reinaldo Arenas">
+    <picture>
+
+      <source type="image/webp" srcset="{{ .Site.Home.RelPermalink }}reinaldo-arenas.webp">
+
+      <img type="image/jpeg" src="{{ .Site.Home.RelPermalink }}reinaldo-arenas.jpg" alt="Photo of Cuban writer Reinaldo Arenas">
+
+    </picture>
 
     <div class="w-full h-full top-0 flex flex-col flex-wrap justify-center items-center absolute text-white">
 

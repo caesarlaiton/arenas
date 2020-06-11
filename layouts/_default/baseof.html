@@ -19,7 +19,15 @@
 
     {{ if eq .Kind "home" }}
 
-      {{ $js := resources.Get "js/main.js" }}
+      {{ $js := resources.Get "js/main.js" | babel }}
+
+      {{ $isProd := eq hugo.Environment "production" }}
+
+      {{ if $isProd }}
+
+        {{ $js = $js | minify | fingerprint }}
+
+      {{ end }}
 
       <script src="{{ $js.RelPermalink }}"></script>
 

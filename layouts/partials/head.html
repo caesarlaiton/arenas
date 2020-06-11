@@ -17,12 +17,19 @@
   {{ $isProd := eq hugo.Environment "production" }}
 
 	{{ $style := resources.Get "css/style.css" | resources.PostCSS }}
-  {{ if $isProd }} {{ $style = $style | minify | fingerprint }} {{ end }}
+  {{ if $isProd }} {{ $style = $style | minify }} {{ end }}
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
 	{{ template "_internal/opengraph.html" . }}
 	{{ template "_internal/schema.html" . }}
 	{{ template "_internal/twitter_cards.html" . }}
 	{{ template "_internal/google_analytics.html" . }}
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Home.RelPermalink }}apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Home.RelPermalink }}favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Home.RelPermalink }}favicon-16x16.png">
+  <link rel="manifest" href="{{ .Site.Home.RelPermalink }}site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
 
 </head>

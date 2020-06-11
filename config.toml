@@ -1,5 +1,7 @@
 baseURL = ""
 
+publishDir = "docs"
+
 languageCode = "en-us"
 
 title = "Arenas"
@@ -12,5 +14,5 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [params]
 	description = "Website about Cuban writer Reinaldo Arenas"
-	images = [".jpg"]
+	images = ["/reinaldo-arenas.jpg"]
 	title = "Arenas"

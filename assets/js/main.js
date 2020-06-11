@@ -3,8 +3,16 @@
 const rightBtnCarousel = document.querySelectorAll("button.carousel")[1],
        leftBtnCarousel = document.querySelectorAll("button.carousel")[0],
        listBtnCarousel = document.querySelectorAll("li.carousel button"),
+        anchorCarousel = document.querySelector("a.carousel"),
            imgCarousel = document.querySelectorAll("img.carousel")[0],
            divCarousel = document.querySelector("div.carousel"),
+        anchorHrefCarousel = [
+          "https://www.amazon.com/Before-Night-Falls-Reinaldo-Arenas/dp/0140157654",
+          "https://www.amazon.com/Farewell-Sea-Novel-Cuba-Pentagonia/dp/0140066365",
+          "https://www.amazon.com/Singing-Well-Pentagonia-Reinaldo-Arenas/dp/014009444X",
+          "https://www.amazon.com/Assault-Novel-Pentagonia-Reinaldo-Arenas/dp/0140157182",
+          "https://www.amazon.com/Color-Summer-Earthly-Delights-Pentagonia/dp/0140157190"
+        ],
         imgSrcCarousel = [
           "/before-night-falls.jpg",
           "/farewell-to-the-sea.jpg",
@@ -29,7 +37,7 @@ divCarousel.addEventListener("mouseover", () => {
 
 divCarousel.addEventListener("mouseout", () => {
   clearInterval(automateCarousel);
-  automateCarousel = setInterval(() => { rightBtnCarousel.click() }, 5000);
+  automateCarousel = setInterval(() => { rightBtnCarousel.click() }, 10000);
   btnCarouselTranslation();
 });
 
@@ -54,6 +62,7 @@ function changeImg(limitNum, updateCounter, resetCounter, lastBtnIndex) {
   if (counter !== limitNum) {
     counter = counter + updateCounter;
 
+    anchorCarousel.href = anchorHrefCarousel[counter];
     imgCarousel.src = imgSrcCarousel[counter];
     imgCarousel.alt = imgAltCarousel[counter];
 
@@ -63,7 +72,9 @@ function changeImg(limitNum, updateCounter, resetCounter, lastBtnIndex) {
   } else {
     counter = resetCounter;
 
+    anchorCarousel.href = anchorHrefCarousel[counter];
     imgCarousel.src = imgSrcCarousel[counter];
+    imgCarousel.alt = imgAltCarousel[counter];
 
     listBtnCarousel[counter].classList.add("opacity-100");
     listBtnCarousel[counter + lastBtnIndex].classList.remove("opacity-100");
@@ -75,7 +86,7 @@ listBtnCarousel.forEach(btn => {
 
   btn.addEventListener("blur", () => {
     clearInterval(automateCarousel);
-    automateCarousel = setInterval(() => { rightBtnCarousel.click() }, 5000);
+    automateCarousel = setInterval(() => { rightBtnCarousel.click() }, 10000);
   });
 
   btn.addEventListener("click", () => {
@@ -83,6 +94,7 @@ listBtnCarousel.forEach(btn => {
     imgCarousel.classList.add("opacity-25");
 
     setTimeout(() => {
+      anchorCarousel.href = anchorHrefCarousel[btn.dataset.index];
       imgCarousel.src = imgSrcCarousel[btn.dataset.index];
       imgCarousel.alt = imgAltCarousel[btn.dataset.index];
       imgCarousel.classList.remove("opacity-25");
@@ -100,7 +112,7 @@ function imgCarouselTransition(changeImg){
   }, 300);
 };
 
-let automateCarousel = setInterval(() => { rightBtnCarousel.click() }, 5000);
+let automateCarousel = setInterval(() => { rightBtnCarousel.click() }, 10000);
 
 // TO DO
   // Add useful comments.

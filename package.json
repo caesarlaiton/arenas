@@ -4,7 +4,7 @@
   "description": "Website about Cuban writer Reinaldo Arenas.",
   "main": "gulpfile.js",
   "scripts": {
-    "hugo": "NODE_ENV=production hugo --baseURL='https://caesarlaiton.github.io/castillete/' --gc && gulp critical"
+    "hugo": "NODE_ENV=production hugo --baseURL='https://caesarlaiton.github.io/arenas/' --gc && gulp critical"
   },
   "repository": {
     "type": "git",

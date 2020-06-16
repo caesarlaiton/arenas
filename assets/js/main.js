@@ -32,13 +32,13 @@ let counter = 0;
 
 divCarousel.addEventListener("mouseover", () => {
   clearInterval(automateCarousel);
-  btnCarouselTranslation();
+  showBtnCarousel();
 });
 
 divCarousel.addEventListener("mouseout", () => {
   clearInterval(automateCarousel);
   automateCarousel = setInterval(() => { rightBtnCarousel.click() }, 10000);
-  btnCarouselTranslation();
+  hideBtnCarousel();
 });
 
 leftBtnCarousel.addEventListener("click", () => {
@@ -53,9 +53,15 @@ rightBtnCarousel.addEventListener("click", () => {
   });
 });
 
-function btnCarouselTranslation() {
-  leftBtnCarousel.classList.toggle("-translate-x-16");
-  rightBtnCarousel.classList.toggle("translate-x-16");
+
+function showBtnCarousel() {
+  leftBtnCarousel.classList.remove("-translate-x-16");
+  rightBtnCarousel.classList.remove("translate-x-16");
+};
+
+function hideBtnCarousel() {
+  leftBtnCarousel.classList.add("-translate-x-16");
+  rightBtnCarousel.classList.add("translate-x-16");
 };
 
 function changeImg(limitNum, updateCounter, resetCounter, lastBtnIndex) {
